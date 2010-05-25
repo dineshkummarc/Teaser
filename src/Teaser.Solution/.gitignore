@@ -2,3 +2,5 @@
 *.testrunconfig
 *.vsmdi
 TestResults/**
+bin/*
+obj/*

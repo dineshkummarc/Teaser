@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teaser.Service", "..\Teaser.Service\Teaser.Service.csproj", "{A6C1B1CA-088E-48F4-BDB0-2363F78561A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teaser.DataAccess", "..\Teaser.DataAccess\Teaser.DataAccess.csproj", "{56469555-3CE1-494E-9464-0353F5554730}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teaser.Web", "..\Teaser.Web\Teaser.Web.csproj", "{E65411EA-0499-441A-A832-1440A29E1F89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{A6C1B1CA-088E-48F4-BDB0-2363F78561A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6C1B1CA-088E-48F4-BDB0-2363F78561A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6C1B1CA-088E-48F4-BDB0-2363F78561A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56469555-3CE1-494E-9464-0353F5554730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56469555-3CE1-494E-9464-0353F5554730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56469555-3CE1-494E-9464-0353F5554730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56469555-3CE1-494E-9464-0353F5554730}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65411EA-0499-441A-A832-1440A29E1F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65411EA-0499-441A-A832-1440A29E1F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65411EA-0499-441A-A832-1440A29E1F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65411EA-0499-441A-A832-1440A29E1F89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
