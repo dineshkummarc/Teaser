@@ -1,2 +1,4 @@
 *.suo
+*.testrunconfig
+*.vsmdi
 TestResults/**
