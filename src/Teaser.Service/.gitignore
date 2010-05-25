@@ -1,0 +1,8 @@
+*.suo
+TestResults/**
+bin/*
+obj/*
+AppSettings.config
+**/**/*.orig
+**/**/**/*.orig
+*.Publish.xml
