@@ -6,7 +6,7 @@ using Teaser.Entities;
 
 namespace Teaser.DataAccess.Interfaces
 {
-    public interface IGameRepository : IRepository<Game>
+    public interface ITeamRepository : IRepository<Team>
     {
     }
 }
