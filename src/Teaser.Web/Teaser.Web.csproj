@@ -87,6 +87,16 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Teaser.Entities\Teaser.Entities.csproj">
+      <Project>{0E35B721-13D9-40C7-B851-9BAF1DB3C0DB}</Project>
+      <Name>Teaser.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Teaser.Service\Teaser.Service.csproj">
+      <Project>{A6C1B1CA-088E-48F4-BDB0-2363F78561A0}</Project>
+      <Name>Teaser.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Shared\" />

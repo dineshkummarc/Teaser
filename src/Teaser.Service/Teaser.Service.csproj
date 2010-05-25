@@ -48,6 +48,16 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Teaser.DataAccess\Teaser.DataAccess.csproj">
+      <Project>{56469555-3CE1-494E-9464-0353F5554730}</Project>
+      <Name>Teaser.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Teaser.Entities\Teaser.Entities.csproj">
+      <Project>{0E35B721-13D9-40C7-B851-9BAF1DB3C0DB}</Project>
+      <Name>Teaser.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
