@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Teaser.DataAccess
+namespace Teaser.DataAccess.Fake
 {
-    public class Class1
+    class FakeGameRepository
     {
     }
 }
