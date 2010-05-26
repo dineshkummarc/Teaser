@@ -79,6 +79,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\Migrations\001_AddProTeamTable.cs" />
+    <Compile Include="Sql\Migrations\003_AddGameTable.cs" />
+    <Compile Include="Sql\Migrations\002_AddWeekTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Sql\build.bat" />
