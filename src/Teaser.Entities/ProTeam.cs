@@ -6,18 +6,18 @@ using Teaser.Entities.Base;
 
 namespace Teaser.Entities
 {
-    public class Team : BaseItem
+    public class ProTeam : BaseItem
     {
         public string City { get; set; }
         public string Name { get; set; }
 
 
 
-        public Team()
+        public ProTeam()
         {
             this.Id = -1;
         }
-        public Team(int id, string city, string name)
+        public ProTeam(int id, string city, string name)
         {
             this.Id = id;
             this.City = city;
