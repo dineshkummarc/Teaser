@@ -3,7 +3,7 @@
   <Class Name="Teaser.Entities.Game">
     <Position X="1.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIAQAAAAAAAAAAAAAABAAAAQAAhAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAQIAAAAAAAAAAAAABAAAQQIAhAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -19,6 +19,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Week.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Teaser.Entities.Pick">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAIAAAAAAQAAAAAAAAAAKAAAAA=</HashCode>
+      <FileName>Pick.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Tahoma" Size="8.25" />

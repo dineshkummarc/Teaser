@@ -46,9 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseItem.cs" />
+    <Compile Include="Enum.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="League.cs" />
+    <Compile Include="Pick.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProTeam.cs" />
+    <Compile Include="TeaserTeam.cs" />
     <Compile Include="Week.cs" />
   </ItemGroup>
   <ItemGroup>
