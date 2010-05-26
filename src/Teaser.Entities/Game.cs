@@ -8,12 +8,15 @@ namespace Teaser.Entities
 {
     public class Game : BaseItem
     {
-        public string HomeTeam { get; set; }
-        public string AwayTeam { get; set; }
+        public int HomeTeamId { get; set; }
+        public ProTeam HomeTeam { get; set; }
+        public int AwayTeamId { get; set; }
+        public ProTeam AwayTeam { get; set; }
         public DateTime Date { get; set; }
         public int Line { get; set; }
+        public int HomeScore { get; set; }
+        public int AwayScore { get; set; }
         public int WeekId { get; set; }
-        public string HomeScore { get; set; }
-        public string AwayScore { get; set; }
+        public Week Week { get; set; }
     }
 }

@@ -46,8 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fake\FakeGameRepository.cs" />
-    <Compile Include="Fake\FakeTeamRepository.cs" />
+    <Compile Include="Fake\FakeProTeamRepository.cs" />
     <Compile Include="Interfaces\IGameRepository.cs" />
+    <Compile Include="Interfaces\IPickRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\ITeamRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
