@@ -24,7 +24,7 @@ namespace Teaser.DataAccess.Fake
 
         public IQueryable<Week> Get()
         {
-            throw new NotImplementedException();
+            return list.AsQueryable();
         }
 
         public Week Save(Week entity)

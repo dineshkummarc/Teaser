@@ -1,5 +1,8 @@
 ﻿using Migrator.Framework;
 using System.Data;
+using Teaser.DataAccess.Interfaces;
+using Teaser.DataAccess.Fake;
+using Teaser.Entities;
 
 namespace Teaser.Database.Sql.Migrations
 {
@@ -44,6 +47,20 @@ namespace Teaser.Database.Sql.Migrations
         private void AddRows()
         {
             string[] h = { "Id", "WeekId", "TeaserTeamId", "ProTeamId" };
+
+            IPickRepository repo = new FakePickRepository();
+            var list = repo.Get();
+            foreach (Pick i in list)
+            {
+                Database.Insert(table, h, new string[] 
+                { 
+                    i.Id.ToString(), 
+                    i.WeekId.ToString(), 
+                    i.TeaserTeamId.ToString(), 
+                    i.ProTeamId.ToString() 
+                });
+            }  
+            /*
             int id = 1;
             for (int i = 1; i <= 52; i++)
             {
@@ -51,7 +68,7 @@ namespace Teaser.Database.Sql.Migrations
                 Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "3" });
                 Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "5" });
                 Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "7" }); 
-            } 
+            } */
         }                  
     }
 } 

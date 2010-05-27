@@ -7,7 +7,7 @@ using Teaser.DataAccess.Interfaces;
 
 namespace Teaser.DataAccess.Fake
 {
-    class FakeLeagueRepository: ILeagueRepository
+    public class FakeLeagueRepository: ILeagueRepository
     {
         IList<League> list = new List<League>();
 

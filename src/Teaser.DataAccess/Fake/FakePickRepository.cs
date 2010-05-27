@@ -13,11 +13,25 @@ namespace Teaser.DataAccess.Fake
 
         public FakePickRepository()
         {
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= 1; i++)
             {
                 Pick x = new Pick();
                 x.Id = i;
+                x.WeekId = 1;
+                x.TeaserTeamId = i;
+                x.ProTeamId = 1;
                 list.Add(x);
+
+                /*
+            string[] h = { "Id", "WeekId", "TeaserTeamId", "ProTeamId" };
+                for (int i = 1; i <= 52; i++)
+                {
+                    Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "1" });
+                    Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "3" });
+                    Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "5" });
+                    Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "7" });
+                } */
+
             }
         }
 
@@ -25,7 +39,7 @@ namespace Teaser.DataAccess.Fake
 
         public IQueryable<Pick> Get()
         {
-            throw new NotImplementedException();
+            return this.list.AsQueryable();
         }
 
         public Pick Save(Pick entity)

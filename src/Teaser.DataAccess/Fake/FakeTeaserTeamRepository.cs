@@ -13,10 +13,12 @@ namespace Teaser.DataAccess.Fake
 
         public FakeTeaserTeamRepository()
         {
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= 55; i++)
             {
                 TeaserTeam x = new TeaserTeam();
                 x.Id = i;
+                x.LeagueId = (i < 25) ? 1 : 2;
+                x.Name = "Team-" + i;
                 list.Add(x);
             }
         }
@@ -25,7 +27,7 @@ namespace Teaser.DataAccess.Fake
 
         public IQueryable<TeaserTeam> Get()
         {
-            throw new NotImplementedException();
+            return this.list.AsQueryable();
         }
 
         public TeaserTeam Save(TeaserTeam entity)
