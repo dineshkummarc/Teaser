@@ -28,5 +28,41 @@
       <FileName>Pick.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Teaser.Entities.Enum">
+    <Position X="4" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Teaser.Entities.Enum.LeagueType">
+        <TypeIdentifier>
+          <NewMemberFileName>Enum.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Teaser.Entities.Enum.WeekType">
+        <TypeIdentifier>
+          <NewMemberFileName>Enum.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Teaser.Entities.League">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>League.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Teaser.Entities.TeaserTeam">
+    <Position X="1.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TeaserTeam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Tahoma" Size="8.25" />
 </ClassDiagram>

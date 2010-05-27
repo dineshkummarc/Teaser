@@ -7,7 +7,7 @@ using Teaser.Entities;
 
 namespace Teaser.DataAccess.Fake
 {
-    public class FakeProTeamRepository : ITeamRepository
+    public class FakeProTeamRepository : IProTeamRepository
     {
         IList<ProTeam> list = new List<ProTeam>();
 
@@ -44,8 +44,7 @@ namespace Teaser.DataAccess.Fake
             list.Add(new ProTeam(29, "Arizona ", "Cardinals"));
             list.Add(new ProTeam(30, "San Francisco", " 49ers"));
             list.Add(new ProTeam(31, "Seattle", " Seahawks"));
-            list.Add(new ProTeam(32, "St. Louis ", "Rams"));
-
+            list.Add(new ProTeam(32, "St. Louis ", "Rams")); 
         }
 
 

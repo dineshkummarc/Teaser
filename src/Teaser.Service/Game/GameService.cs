@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Teaser.Service
+namespace Teaser.Service.Game
 {
-    public class Class1
+    class GameService
     {
     }
 }

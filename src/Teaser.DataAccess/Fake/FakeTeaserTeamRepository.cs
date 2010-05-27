@@ -2,42 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Teaser.DataAccess.Interfaces;
 using Teaser.Entities;
+using Teaser.DataAccess.Interfaces;
 
 namespace Teaser.DataAccess.Fake
 {
-    public class FakeGameRepository : IGameRepository
+    public class FakeTeaserTeamRepository : ITeaserTeamRepository
     {
-        IList<Game> list = new List<Game>();
+        IList<TeaserTeam> list = new List<TeaserTeam>();
 
-        public FakeGameRepository( )
+        public FakeTeaserTeamRepository()
         {
-            for (int i = 1; i <= 42; i++)
+            for (int i = 1; i <= 3; i++)
             {
-                Game x = new Game();
+                TeaserTeam x = new TeaserTeam();
                 x.Id = i;
                 list.Add(x);
             }
-             
         }
 
+        #region IRepository<TeaserTeam> Members
 
-
-
-        #region IRepository<Game> Members
-
-        public List<Game> Get()
+        public List<TeaserTeam> Get()
         {
             throw new NotImplementedException();
         }
 
-        public Game Save(Game entity)
+        public TeaserTeam Save(TeaserTeam entity)
         {
             throw new NotImplementedException();
         }
 
-        public bool Delete(Game entity)
+        public bool Delete(TeaserTeam entity)
         {
             throw new NotImplementedException();
         }
