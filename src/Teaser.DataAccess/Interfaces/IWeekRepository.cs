@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Teaser.Entities;
 
 namespace Teaser.DataAccess.Interfaces
 {
-    public interface IRepository<T>
+    public interface IWeekRepository : IRepository<Week>
     {
-        IQueryable<T> Get();
-        T Save(T entity);
-        bool Delete(T entity);
     }
 }

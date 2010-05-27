@@ -23,7 +23,7 @@ namespace Teaser.DataAccess.Fake
 
         #region IRepository<TeaserTeam> Members
 
-        public List<TeaserTeam> Get()
+        public IQueryable<TeaserTeam> Get()
         {
             throw new NotImplementedException();
         }

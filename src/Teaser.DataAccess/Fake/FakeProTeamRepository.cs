@@ -50,9 +50,9 @@ namespace Teaser.DataAccess.Fake
 
         #region IRepository<Team> Members
 
-        public List<ProTeam> Get()
+        public IQueryable<ProTeam> Get()
         {
-            throw new NotImplementedException();
+            return list.AsQueryable();
         }
 
         public ProTeam Save(ProTeam entity)

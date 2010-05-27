@@ -13,20 +13,16 @@ namespace Teaser.DataAccess.Fake
 
         public FakeLeagueRepository()
         {
-            for (int i = 1; i <= 3; i++)
-            {
-                League x = new League();
-                x.Id = i;
-                list.Add(x);
-            }
+            list.Add(new League { Id = 1, Name = "NTL" });
+            list.Add(new League { Id = 2, Name = "Stu Season" });
         }
 
 
         #region IRepository<League> Members
 
-        public List<League> Get()
+        public IQueryable<League> Get()
         {
-            throw new NotImplementedException();
+            return list.AsQueryable();
         }
 
         public League Save(League entity)

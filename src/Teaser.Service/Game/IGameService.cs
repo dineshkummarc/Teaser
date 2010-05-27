@@ -47,8 +47,6 @@ public class ShapeRepository : Repository<Shape>, IShapeRepository
 
          * 
          * 
-      * */
-
 
 
         IQueryable<HtmlContent> Get(DateTime dt);
@@ -58,6 +56,8 @@ public class ShapeRepository : Repository<Shape>, IShapeRepository
         HtmlContent Get(string name, DateTime dt);
         HtmlContent Save(HtmlContent item);
         bool Delete(HtmlContent item); 
+
+      * */
 
     }
 }
