@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Migrate">
+  <PropertyGroup>
+    <MigratorTasksPath>$(MSBuildProjectDirectory)\..\bin\Debug\</MigratorTasksPath>
+  </PropertyGroup>
+
+  <!-- Migration-related targets, properties, etc. -->
+  <Import Project="$(MSBuildProjectDirectory)\Migrator.Targets" />
+
+
+  <Target Name="BuildMigrateProject">
+    <MSBuild Projects="../Teaser.Database.csproj"></MSBuild>
+  </Target>
+
+
+  <Target Name="Migrate" DependsOnTargets="BuildMigrateProject">
+    <CreateProperty Value="-1"  Condition="'$(SchemaVersion)'==''">
+      <Output TaskParameter="Value" PropertyName="SchemaVersion"/>
+    </CreateProperty>
+    <Migrate Provider="SqlServer"
+        Connectionstring="Data Source=.\SQLEXPRESS;Database=Teaser;Integrated Security=true;"
+        Migrations="$(MigratorTasksPath)\Teaser.Database.dll"
+        To="$(SchemaVersion)"/>
+  </Target>
+
+  <Target Name="MigrateZero" DependsOnTargets="BuildMigrateProject">
+    <CreateProperty Value="0"  Condition="'$(SchemaVersion)'==''">
+      <Output TaskParameter="Value" PropertyName="SchemaVersion"/>
+    </CreateProperty>
+    <Migrate Provider="SqlServer"
+        Connectionstring="Data Source=.\SQLEXPRESS;Database=Teaser;Integrated Security=true;"
+        Migrations="$(MigratorTasksPath)\Teaser.Database.dll"
+        To="$(SchemaVersion)"/>
+  </Target>
+
+  <Target Name="MigrateDump" DependsOnTargets="BuildMigrateProject">
+    <CreateProperty Value="-1"  Condition="'$(SchemaVersion)'==''">
+      <Output TaskParameter="Value" PropertyName="SchemaVersion"/>
+    </CreateProperty>
+
+    <Migrate Provider="SqlServer"
+          Connectionstring="Data Source=.\SQLEXPRESS;Database=Teaser;Integrated Security=true;"
+          Migrations="$(MigratorTasksPath)\Teaser.Database.dll"
+          To="$(SchemaVersion)"
+          ScriptFile="migrate.sql"/>
+  </Target>
+
+
+  <!--<Target Name="Migrate-DryRun" DependsOnTargets="BuildMigrateProject">
+        <CreateProperty Value="-1"  Condition="'$(SchemaVersion)'==''">
+            <Output TaskParameter="Value" PropertyName="SchemaVersion"/>
+        </CreateProperty>
+
+        <Migrate Provider="MySql"
+            Connectionstring="Data Source=localhost;Database=test;User Id=root;Password=;"
+            Migrations="$(MSBuildProjectDirectory)\migrations\migrations.dll"
+            To="$(SchemaVersion)"
+            DryRun="true"/>
+    </Target>
+-->
+
+</Project>
