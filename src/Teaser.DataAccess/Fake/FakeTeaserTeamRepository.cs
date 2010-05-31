@@ -13,7 +13,7 @@ namespace Teaser.DataAccess.Fake
 
         public FakeTeaserTeamRepository()
         {
-            for (int i = 1; i <= 55; i++)
+            for (int i = 1; i <= 50; i++)
             {
                 TeaserTeam x = new TeaserTeam();
                 x.Id = i;

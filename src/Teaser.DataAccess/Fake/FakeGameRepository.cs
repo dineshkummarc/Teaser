@@ -19,8 +19,7 @@ namespace Teaser.DataAccess.Fake
             for (int i = 1; i <= 16; i++) //week 1
             { 
                 int  homeId = teamId++ ;
-                int awayId = teamId++ ;
-                if (teamId > 32) teamId = 1;
+                int awayId = teamId++ ; 
                 DateTime date = new DateTime(2010, 1, 1); // "1/1/2010"; //(i > 16) ? "1/7/2010" : "1/1/2010"; 
                 int weekId =  1 ;  //(i > 16) ? "2" : "1"; 
                 int line = (i % 4 == 1) ? 12 : (i % 4 == 2) ? -14 : (i % 4 == 3) ? 24 : -6;

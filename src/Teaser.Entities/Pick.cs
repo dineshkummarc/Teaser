@@ -12,8 +12,8 @@ namespace Teaser.Entities
         public ProTeam ProTeam { get; set; }
         public int TeaserTeamId { get; set; }
         public TeaserTeam TeaserTeam { get; set; }
-        public int WeekId { get; set; }
-        public Week Week { get; set; }
+        public int GameId { get; set; }
+        public Game Game { get; set; }
         public bool Cover { get; set; }
     }
 }

@@ -16,14 +16,14 @@ namespace Teaser.Database.Sql.Migrations
         {
             Database.AddTable(table,
                 new Column("Id", DbType.Int32, ColumnProperty.PrimaryKeyWithIdentity),
-                new Column("WeekId", DbType.Int32),
+                new Column("GameId", DbType.Int32),
                 new Column("TeaserTeamId", DbType.Int32),
                 new Column("ProTeamId", DbType.Int32)
                 //,new Column("TeaserLine", DbType.Int32) 
                 //,new Column("Score", DbType.Int32)
             );
             Database.AddForeignKey("FK_TeaserTeam_Pick", table, "TeaserTeamId", "TeaserTeam", "Id");
-            Database.AddForeignKey("FK_Week_Pick", table, "WeekId", "Week", "Id");
+            Database.AddForeignKey("FK_Game_Pick", table, "GameId", "Game", "Id");
             Database.AddForeignKey("FK_ProTeam_Pick", table, "ProTeamId", "ProTeam", "Id");
             AddSampleData();
         }
@@ -46,7 +46,7 @@ namespace Teaser.Database.Sql.Migrations
 
         private void AddRows()
         {
-            string[] h = { "Id", "WeekId", "TeaserTeamId", "ProTeamId" };
+            string[] h = { "Id", "GameId", "TeaserTeamId", "ProTeamId" };
 
             IPickRepository repo = new FakePickRepository();
             var list = repo.Get();
@@ -55,7 +55,7 @@ namespace Teaser.Database.Sql.Migrations
                 Database.Insert(table, h, new string[] 
                 { 
                     i.Id.ToString(), 
-                    i.WeekId.ToString(), 
+                    i.GameId.ToString(), 
                     i.TeaserTeamId.ToString(), 
                     i.ProTeamId.ToString() 
                 });

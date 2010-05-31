@@ -11,13 +11,13 @@ namespace Teaser.DataAccess.Fake
     {
         IList<Pick> list = new List<Pick>();
 
-        public FakePickRepository()
+        public FakePickRepository() // IGameRepository gameRepository
         {
             for (int i = 1; i <= 1; i++)
             {
                 Pick x = new Pick();
                 x.Id = i;
-                x.WeekId = 1;
+                x.GameId = 1;
                 x.TeaserTeamId = i;
                 x.ProTeamId = 1;
                 list.Add(x);
