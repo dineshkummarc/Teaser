@@ -10,11 +10,14 @@ namespace Teaser.Service.Test
     /// Summary description for GameServiceTest
     /// </summary>
     [TestClass]
-    public class GameServiceTest
-    {   
+    public class GameServiceTest : BaseServiceTest
+    {
+
         [TestMethod]
-        public void TestMethod1()
-        { 
+        public void GameService_GetGamesByWeekId1_IsNotNull()
+        {
+            var q = this._GameService.GetGamesByWeekId(1);
+            Assert.IsNotNull(q);
         }
     }
 }
