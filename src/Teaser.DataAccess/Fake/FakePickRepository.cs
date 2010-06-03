@@ -29,8 +29,7 @@ namespace Teaser.DataAccess.Fake
                 {
                     Pick p = new Pick();
                     p.Id = (list.Count == 0) ? 1 : list.Max(x => x.Id) + 1;
-                    int gameId = (p.Id % (minGameId - maxGameId)) + minGameId;
-                    //int gameId = (j % maxGameId) + minGameId;
+                    int gameId = (p.Id % (maxGameId - minGameId + 1)) + minGameId; 
                     Game g = gameRepository.Get().Where(x => x.Id == gameId).Single();
                     p.GameId = g.Id;
                     p.TeaserTeamId = i;
