@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Teaser.Entities;
 
-namespace Teaser.Service.Game
+
+namespace Teaser.Service.GameServices
 {
     public interface IGameService
     {
+
+        IList<Game> GetGamesByWeekId();
+        Game Save(Game item);
+        bool Delete(Game item);  
 
         /*
          * 
