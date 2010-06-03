@@ -13,25 +13,30 @@ namespace Teaser.DataAccess.Fake
 
         public FakePickRepository() // IGameRepository gameRepository
         {
-            for (int i = 1; i <= 1; i++)
+            FakeGameRepository gameRepository = new FakeGameRepository();
+            AddPicksForWeek(gameRepository, 1);
+            AddPicksForWeek(gameRepository, 2);
+        }
+
+        private void AddPicksForWeek(FakeGameRepository gameRepository, int weekId)
+        {
+            int minGameId = gameRepository.Get().Where(x => x.WeekId == weekId).Min(x => x.Id);
+            int maxGameId = gameRepository.Get().Where(x => x.WeekId == weekId).Max(x => x.Id);
+            int maxTeaserTeamId = 50;
+            for (int i = 1; i <= maxTeaserTeamId; i++)
             {
-                Pick x = new Pick();
-                x.Id = i;
-                x.GameId = 1;
-                x.TeaserTeamId = i;
-                x.ProTeamId = 1;
-                list.Add(x);
-
-                /*
-            string[] h = { "Id", "WeekId", "TeaserTeamId", "ProTeamId" };
-                for (int i = 1; i <= 52; i++)
+                for (int j = 1; j <= 4; j++)
                 {
-                    Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "1" });
-                    Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "3" });
-                    Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "5" });
-                    Database.Insert(table, h, new string[] { id++.ToString(), "1", i.ToString(), "7" });
-                } */
-
+                    Pick p = new Pick();
+                    p.Id = (list.Count == 0) ? 1 : list.Max(x => x.Id) + 1;
+                    int gameId = (p.Id % (minGameId - maxGameId)) + minGameId;
+                    //int gameId = (j % maxGameId) + minGameId;
+                    Game g = gameRepository.Get().Where(x => x.Id == gameId).Single();
+                    p.GameId = g.Id;
+                    p.TeaserTeamId = i;
+                    p.ProTeamId = ((j % 2) == 0) ? g.HomeTeamId : g.AwayTeamId;
+                    list.Add(p);
+                } 
             }
         }
 
