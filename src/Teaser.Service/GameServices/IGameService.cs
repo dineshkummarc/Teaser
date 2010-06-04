@@ -9,8 +9,7 @@ namespace Teaser.Service.GameServices
 {
     public interface IGameService
     {
-
-        IList<Game> GetGamesByWeekId();
+        IList<Game> GetGamesByWeekId(int weekId);
         Game Save(Game item);
         bool Delete(Game item);  
 

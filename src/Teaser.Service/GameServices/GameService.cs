@@ -19,9 +19,9 @@ namespace Teaser.Service.GameServices
 
         #region IGameService Members
 
-        public IList<Game> GetGamesByWeekId()
+        public IList<Game> GetGamesByWeekId(int weekId)
         {
-            throw new NotImplementedException();
+            return this._gameRepository.Get().Where(x => x.WeekId == weekId).ToList();
         }
 
         public Game Save(Game item)

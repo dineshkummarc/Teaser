@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="GameServices\GameService.cs" />
     <Compile Include="GameServices\IGameService.cs" />
+    <Compile Include="PickServices\IPickService.cs" />
+    <Compile Include="PickServices\PickService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
