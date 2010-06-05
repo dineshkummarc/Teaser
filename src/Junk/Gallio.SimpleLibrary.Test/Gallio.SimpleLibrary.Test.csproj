@@ -82,7 +82,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FibonacciTest.cs" />
+    <Compile Include="UnitTests\FibonacciTest.cs" />
     <Compile Include="FluentForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />

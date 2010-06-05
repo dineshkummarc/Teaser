@@ -3,7 +3,7 @@ using Gallio.SimpleLibrary;
 using MbUnit.Framework;
 using WatiN.Core;
 
-namespace Gallio.SimpleLibrary.Test
+namespace Stable.UITests.UnitTests
 {
     public class FibonacciTest
     {
