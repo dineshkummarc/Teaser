@@ -14,17 +14,17 @@ namespace Gallio.SimpleLibrary.Test
             Assert.AreEqual(8, result);
         }
 
-        [Test]
-        public void SearchForWatiNOnGoogle()
-        { 
-            using (var browser = new IE("http://www.google.com"))
-            {
-                browser.TextField(Find.ByName("q")).TypeText("WatiN");
-                browser.Button(Find.ByName("btnG")).Click();
+        //[Test]
+        //public void SearchForWatiNOnGoogle()
+        //{ 
+        //    using (var browser = new IE("http://www.google.com"))
+        //    {
+        //        browser.TextField(Find.ByName("q")).TypeText("WatiN");
+        //        browser.Button(Find.ByName("btnG")).Click();
 
-                Assert.IsTrue(browser.ContainsText("WatiN"));
-            }
-        }
+        //        Assert.IsTrue(browser.ContainsText("WatiN"));
+        //    }
+        //}
 
     }
 }
