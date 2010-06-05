@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using System.Web.Mvc;
 
-namespace Stable
+namespace Stable.Core.UiCore
 {
 	public static class HtmlHelperExtensions
 	{

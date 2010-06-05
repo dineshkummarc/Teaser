@@ -6,6 +6,7 @@ using NBehave.Spec.MbUnit;
 using Gallio.Mvc.Models;
 using WatiN.Core;
 using Stable.Models;
+using Stable.Core.UiCore;
 
 namespace Stable.UITests.UITests
 {

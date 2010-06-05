@@ -1,6 +1,6 @@
 using System;
 
-namespace Stable
+namespace Stable.Core.UiCore
 {
 	public static class StableSite
 	{

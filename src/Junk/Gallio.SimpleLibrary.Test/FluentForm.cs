@@ -1,6 +1,7 @@
 using System;
 using System.Linq.Expressions;
 using WatiN.Core;
+using Stable.Core.UiCore;
 
 namespace Stable.UITests
 {

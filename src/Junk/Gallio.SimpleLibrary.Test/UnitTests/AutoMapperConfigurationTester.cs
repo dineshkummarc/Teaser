@@ -1,5 +1,6 @@
 using AutoMapper;
 using MbUnit.Framework;
+using Stable.Core.UiCore;
 
 namespace Stable.UITests.UnitTests
 {

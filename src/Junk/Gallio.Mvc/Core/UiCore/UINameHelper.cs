@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Stable
+namespace Stable.Core.UiCore
 {
 	public static class UINameHelper
 	{

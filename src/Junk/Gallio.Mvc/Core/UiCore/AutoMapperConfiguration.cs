@@ -2,7 +2,7 @@ using AutoMapper;
 using Stable.Core.Domain;
 using Stable.Models;
 
-namespace Stable
+namespace Stable.Core.UiCore
 {
 	public static class AutoMapperConfiguration
 	{

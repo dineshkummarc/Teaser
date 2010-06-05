@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Stable.Core.Services;
 using StructureMap;
+using Stable.Core.UiCore;
 
 namespace Stable
 {
