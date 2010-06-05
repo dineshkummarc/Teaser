@@ -16,8 +16,7 @@ namespace Gallio.SimpleLibrary.Test
 
         [Test]
         public void SearchForWatiNOnGoogle()
-        {
-
+        { 
             using (var browser = new IE("http://www.google.com"))
             {
                 browser.TextField(Find.ByName("q")).TypeText("WatiN");
