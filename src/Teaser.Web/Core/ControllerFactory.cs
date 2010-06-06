@@ -1,10 +1,15 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
-using StructureMap;
 using System.Web.Routing;
+using StructureMap;
 
-namespace Stable.Core.Services
+
+namespace Teaser.Web.Core
 {
+
     public class ControllerFactory : DefaultControllerFactory
     {
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)

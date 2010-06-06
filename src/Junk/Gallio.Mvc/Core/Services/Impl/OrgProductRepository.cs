@@ -6,12 +6,12 @@ using Stable.Core.Domain;
 
 namespace Stable.Core.Services.Impl
 {
-	public class ProductRepository : IProductRepository
+	public class OrgProductRepository : IProductRepository
 	{
 		private static readonly IList<Product> _products = new List<Product>();
 		private static readonly IList<Manufacturer> _manufacturers = new List<Manufacturer>();
 
-		static ProductRepository()
+		static OrgProductRepository()
 		{
 			Reset();
 		}
@@ -39,7 +39,7 @@ namespace Stable.Core.Services.Impl
 			              	Name = "Insignia® - 26\" Class / 720p / 60Hz / LCD HDTV DVD Combo",
 			              	Model = "NS-LDVD26Q-10A",
 			              	Sku = "9154764",
-			              	Price = 359.99m,
+			              	Price = 459.99m,
 			              	Manufacturer = insignia
 			              });
 			_products.Add(new Product
@@ -48,7 +48,7 @@ namespace Stable.Core.Services.Impl
 			              	Name = "Insignia® - 19\" Class / 720p / 60Hz / LCD HDTV",
 			              	Model = "NS-L19Q-10A",
 			              	Sku = "9182715",
-			              	Price = 189.99m,
+			              	Price = 489.99m,
 			              	Manufacturer = insignia
 			              });
 			_products.Add(new Product
@@ -57,7 +57,7 @@ namespace Stable.Core.Services.Impl
 			              	Name = "Dynex® - 15\" Class / 720p / 60Hz / LCD HDTV",
 			              	Model = "DX-L15-10A",
 			              	Sku = "9135376",
-			              	Price = 159.99m,
+			              	Price = 459.99m,
 			              	Manufacturer = dynex
 			              });
 		}

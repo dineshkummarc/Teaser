@@ -1,5 +1,9 @@
-<%@ Import Namespace="Stable"%>
+
 <%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Teaser.Web.Models" %>
+<%@ Import Namespace="Teaser.Web.Core" %>
+
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,7 +17,7 @@
 
         <div id="header">
             <div id="title">
-                <h1>Junk Gallio.Mvc</h1>
+                <h1>Teaser.Web</h1>
             </div>
               
             <div id="logindisplay">
@@ -25,7 +29,7 @@
                 <ul id="menu">              
                     <li><%= Html.ActionLink("Home", "Index", "Home")%></li>
                     <li><%= Html.ActionLink("Products", "Index", "Product", 
-                        	null, new { rel = Stable.Core.UiCore.StableSite.Nav.Products })%></li>
+                        	null, new { rel = Teaser.Web.Core.StableSite.Nav.Products })%></li>
                     <li><%= Html.ActionLink("About", "About", "Home")%></li>
                 </ul>
             

@@ -1,15 +1,14 @@
 <%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ProductListModel[]>" %>
-<%@ Import Namespace="Stable"%>
-<%@ Import Namespace="Stable.Models"%>
-<%@ Import Namespace="Stable.Core.Domain"%>
-<%@ Import Namespace="Stable.Core.UiCore"%>
+<%@ Import Namespace="Teaser.Web.Core" %>
+<%@ Import Namespace="Teaser.Web.Models" %>
+
 
 <asp:Content ID="indexTitle" ContentPlaceHolderID="TitleContent" runat="server">
     Home Page
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
-	<input type="hidden" name="pageId" value="<%= Stable.Core.UiCore.StableSite.Screen.Product.Index %>" />
+	<input type="hidden" name="pageId" value="<%= StableSite.Screen.Product.Index %>" />
     
     <h2>Products</h2>
     <% var products = Model; %>

@@ -7,6 +7,9 @@ using System.Web.Routing;
 using Stable.Core.Services;
 using StructureMap;
 using Stable.Core.UiCore;
+using Fragile.Core.Services;
+using Stable.Core.Services.Impl;
+
 
 namespace Stable
 {
@@ -31,11 +34,23 @@ namespace Stable
 		{
 			RegisterRoutes(RouteTable.Routes);
 
-			ObjectFactory.Initialize(cfg => cfg.Scan(s =>
-			{
-				s.TheCallingAssembly();
-				s.WithDefaultConventions();
-			}));
+            //ObjectFactory.Initialize(cfg => cfg.Scan(s =>
+            //{
+            //    s.TheCallingAssembly();
+            //    s.WithDefaultConventions();
+            //}));
+
+            ObjectFactory.Initialize(x =>
+            {
+                x.Scan(scan =>
+                {
+                    // Automatically maps interface IXyz to class Xyz
+                    scan.WithDefaultConventions();
+                    scan.Assembly(GetType().Assembly);
+                });
+
+                x.ForRequestedType(typeof(IProductRepository)).Use(typeof(SecondProductRepository));
+            });
 
 			ControllerBuilder.Current.SetControllerFactory(new ControllerFactory());
 
