@@ -30,7 +30,30 @@ namespace Teaser.Web
 
         }
 
-      
+      /*
+	  protected void Application_Start()
+        {
+            RegisterRoutes(RouteTable.Routes);
+
+
+            ObjectFactory.Initialize(x =>
+            {
+                x.Scan(scan =>
+                {
+                    // Automatically maps interface IXyz to class Xyz
+                    scan.WithDefaultConventions();
+                    scan.Assembly(GetType().Assembly);
+                });
+
+                x.ForRequestedType(typeof(IProductRepository)).Use(typeof(FakeProductRepository));
+            });
+
+
+            ControllerBuilder.Current.SetControllerFactory(new ControllerFactory());
+
+            AutoMapperConfiguration.Configure();
+        }
+		*/
 
         protected void Application_Start()
         {
