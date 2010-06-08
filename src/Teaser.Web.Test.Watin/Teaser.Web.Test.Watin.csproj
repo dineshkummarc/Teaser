@@ -35,7 +35,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\AutoMapper\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Gallio, Version=0.0.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+    <Reference Include="Gallio, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\gallio\Gallio.dll</HintPath>
     </Reference>
@@ -43,7 +43,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\watin\Interop.SHDocVw.dll</HintPath>
     </Reference>
-    <Reference Include="MbUnit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+    <Reference Include="MbUnit, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\gallio\MbUnit.dll</HintPath>
     </Reference>
@@ -51,11 +51,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\watin\Microsoft.mshtml.dll</HintPath>
     </Reference>
-    <Reference Include="NBehave.Spec.Framework, Version=0.4.0.0, Culture=neutral, PublicKeyToken=d421feca0f4a05f6, processorArchitecture=MSIL">
+    <Reference Include="NBehave.Spec.Framework, Version=0.4.5.183, Culture=neutral, PublicKeyToken=d421feca0f4a05f6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\nbehave\NBehave.Spec.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="NBehave.Spec.MbUnit, Version=0.4.0.0, Culture=neutral, PublicKeyToken=d421feca0f4a05f6, processorArchitecture=MSIL">
+    <Reference Include="NBehave.Spec.MbUnit, Version=0.4.5.183, Culture=neutral, PublicKeyToken=d421feca0f4a05f6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\nbehave\NBehave.Spec.MbUnit.dll</HintPath>
     </Reference>

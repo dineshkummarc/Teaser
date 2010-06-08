@@ -27,7 +27,7 @@ namespace Teaser.WebUITests.UnitTests
 
 			var result = controller.Index();
 
-            result.ViewName.ShouldEqual(string.Empty);
+            //result.ViewName.ShouldEqual(string.Empty);
             result.ViewData.Model.ShouldEqual(products); 
 		}
 	}
