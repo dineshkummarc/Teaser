@@ -27,10 +27,10 @@
             <div id="menucontainer">
             
                 <ul id="menu">              
-                    <li><%= Html.ActionLink("Home", "Index", "Home")%></li>
+                    <li><%= Html.ActionLink("Default", "Index", "Default")%></li>
                     <li><%= Html.ActionLink("Products", "Index", "Product", 
                         	null, new { rel = Teaser.Web.Core.StableSite.Nav.Products })%></li>
-                    <li><%= Html.ActionLink("About", "About", "Home")%></li>
+                    <li><%= Html.ActionLink("About", "About", "Default")%></li>
                 </ul>
             
             </div>

@@ -80,7 +80,7 @@
     <Compile Include="Areas\Score\Controllers\HomeController.cs" />
     <Compile Include="Areas\Score\ScoreAreaRegistration.cs" />
     <Compile Include="Controllers\AutoMapModelAttribute.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Core\AutoMapperConfiguration.cs" />
     <Compile Include="Core\ControllerFactory.cs" />
@@ -132,12 +132,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Default\Index.aspx" />
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Score\Views\Home\Index.aspx" />
     <Content Include="Areas\Score\Views\Web.config" />
+    <Content Include="Views\Default\About.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Score\Models\" />
