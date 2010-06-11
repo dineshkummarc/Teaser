@@ -52,6 +52,7 @@
     <Compile Include="Fake\FakeProTeamRepository.cs" />
     <Compile Include="Fake\FakeRoleReposiotry.cs" />
     <Compile Include="Fake\FakeTeaserTeamRepository.cs" />
+    <Compile Include="Fake\FakeSiteUserRepository.cs" />
     <Compile Include="Fake\FakeWeekRepository.cs" />
     <Compile Include="Interfaces\IRoleRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IProTeamRepository.cs" />
     <Compile Include="Interfaces\ITeaserTeamRepository.cs" />
+    <Compile Include="Interfaces\ISiteUserRepository.cs" />
     <Compile Include="Interfaces\IWeekRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

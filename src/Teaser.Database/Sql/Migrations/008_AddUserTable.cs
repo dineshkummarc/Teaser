@@ -8,24 +8,24 @@ namespace Teaser.Database.Sql.Migrations
 {
 
     [Migration(8)]
-    public class _008_AddUserTable : Migrator.Framework.Migration
+    public class _008_AddSiteUserTable : Migrator.Framework.Migration
     {
 
         override public void Up()
-        { 
-            Database.AddTable("User",
+        {
+            Database.AddTable("SiteUser",
                 new Column("Id", DbType.Int32, ColumnProperty.PrimaryKeyWithIdentity),
                 new Column("Name", DbType.String, 50),
                 new Column("Password", DbType.String, 50),
                 new Column("OpenId", DbType.String, 500)
-            ); 
+            );
 
             AddSampleData();
         }
 
         override public void Down()
-        { 
-            Database.RemoveTable("User"); 
+        {
+            Database.RemoveTable("SiteUser");
         }
 
 
@@ -34,23 +34,25 @@ namespace Teaser.Database.Sql.Migrations
 
         private void AddSampleData()
         {
-            Database["SqlServer"].ExecuteNonQuery(@"SET IDENTITY_INSERT User ON");
-            AddUsers();
-            Database["SqlServer"].ExecuteNonQuery(@"SET IDENTITY_INSERT User OFF");
+            Database["SqlServer"].ExecuteNonQuery(@"SET IDENTITY_INSERT SiteUser ON");
+            AddSiteUsers();
+            Database["SqlServer"].ExecuteNonQuery(@"SET IDENTITY_INSERT SiteUser OFF");
         }
 
-        private void AddUsers()
+        private void AddSiteUsers()
         {
-            string[] h = { "Id", "Name" , "Password", "OpenId"};
+            string[] h = { "Id", "Name", "Password", "OpenId" };
 
-            IUserRepository repo = new FakeUserRepository();
+            ISiteUserRepository repo = new FakeSiteUserRepository();
             var list = repo.Get();
-            foreach (User i in list)
+            foreach (SiteUser i in list)
             {
-                Database.Insert("User", h, new string[] 
+                Database.Insert("SiteUser", h, new string[] 
                 { 
                     i.Id.ToString(), 
-                    i.Name.ToString() 
+                    i.Name.ToString() , 
+                    i.Password.ToString() , 
+                    i.OpenId.ToString() 
                 });
             }
         }

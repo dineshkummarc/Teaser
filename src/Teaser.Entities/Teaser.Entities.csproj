@@ -55,7 +55,7 @@
     <Compile Include="ProTeam.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="TeaserTeam.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="SiteUser.cs" />
     <Compile Include="Week.cs" />
   </ItemGroup>
   <ItemGroup>
