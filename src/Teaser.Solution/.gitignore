@@ -1,6 +1,7 @@
 *.suo
 *.testrunconfig
 *.vsmdi
+*.lnk
 TestResults/**
 bin/*
 obj/*
