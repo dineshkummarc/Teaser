@@ -84,6 +84,7 @@
     <Compile Include="Sql\Migrations\004_AddLeagueTable.cs" />
     <Compile Include="Sql\Migrations\005_AddTeaserTeamTable.cs" />
     <Compile Include="Sql\Migrations\006_AddPickTable.cs" />
+    <Compile Include="Sql\Migrations\007_AddUserTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Sql\build.bat" />

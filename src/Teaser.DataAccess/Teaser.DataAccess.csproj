@@ -50,8 +50,10 @@
     <Compile Include="Fake\FakePickRepository.cs" />
     <Compile Include="Fake\FakeProductRepository.cs" />
     <Compile Include="Fake\FakeProTeamRepository.cs" />
+    <Compile Include="Fake\FakeRoleReposiotry.cs" />
     <Compile Include="Fake\FakeTeaserTeamRepository.cs" />
     <Compile Include="Fake\FakeWeekRepository.cs" />
+    <Compile Include="Interfaces\IRoleRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
     <Compile Include="Interfaces\IGameRepository.cs" />
     <Compile Include="Interfaces\ILeagueRepository.cs" />
