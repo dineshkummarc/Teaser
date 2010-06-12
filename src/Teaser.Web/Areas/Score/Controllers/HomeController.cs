@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace Teaser.Web.Areas.Score.Controllers
 {
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
         //
         // GET: /Score/Home/
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }

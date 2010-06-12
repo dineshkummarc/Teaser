@@ -7,6 +7,7 @@ using Teaser.Entities;
 namespace Teaser.Database.Sql.Migrations
 {
 
+
     [Migration(8)]
     public class _008_AddSiteUserTable : Migrator.Framework.Migration
     {
@@ -56,5 +57,5 @@ namespace Teaser.Database.Sql.Migrations
                 });
             }
         }
-    }
+    } 
 }
