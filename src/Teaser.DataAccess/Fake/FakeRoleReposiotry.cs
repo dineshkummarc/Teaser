@@ -14,9 +14,9 @@ namespace Teaser.DataAccess.Fake
 
         public FakeRoleRepository()
         { 
-            list.Add(new Role(1, "SiteAdmin"));
+            list.Add(new Role(1, "Coach"));
             list.Add(new Role(2, "LeagueCommish"));
-            list.Add(new Role(3, "Coach"));
+            list.Add(new Role(3, "SiteAdmin"));
             list.Add(new Role(4, "Dev"));
         }
 

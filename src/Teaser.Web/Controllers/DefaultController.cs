@@ -6,17 +6,17 @@ using System.Web.Mvc;
 
 namespace Teaser.Web.Controllers
 {
-    public class DefaultController : Controller
+    public partial class DefaultController : Controller
     {
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             ViewData["Message"] = "Welcome to ASP.NET MVC!";
 
             return View();
         }
 
-        public ActionResult About()
+        public virtual ActionResult About()
         {
             return View();
         }
