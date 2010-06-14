@@ -21,8 +21,8 @@ namespace Teaser.Database.Sql.Migrations
             );
 
 
-            Database.AddForeignKey("FK_SiteUser_SiteUser_Role", "SiteUser_Role", "SiteUserId", "SiteUser", "Id");
-            Database.AddForeignKey("FK_Role_SiteUser_Role", "SiteUser_Role", "RoleId", "Role", "Id");
+            Database.AddForeignKey("FK_SiteUser_SiteUserRole", "SiteUser_Role", "SiteUserId", "SiteUser", "Id");
+            Database.AddForeignKey("FK_Role_SiteUserRole", "SiteUser_Role", "RoleId", "Role", "Id");
 
 
 
