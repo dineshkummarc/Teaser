@@ -26,7 +26,7 @@ namespace OpenIdPortableArea.Tests.Controllers
         private IAuthenticationService _service;
         private EventMessageFactory _eventMessageFactory;
         private IEventMessageBusService _messageBusService;
-        private string _openIdUrl = "http://johncoder.myopenid.com/";
+        private string _openIdUrl = "http://xxxx.myopenid.com/";
 
         [SetUp]
         public void SetUp()
@@ -115,7 +115,7 @@ namespace OpenIdPortableArea.Tests.Controllers
 
             var message = _eventMessageFactory.GetMessage<ClaimsRequestMessage>();
 
-            _controller.Login(new LoginInput { OpenIdUrl = "http://johncoder.myopenid.com/" });
+            _controller.Login(new LoginInput { OpenIdUrl = _openIdUrl });
 
             _bus.Verify(b => b.Send(message), Times.Once(), "ClaimsRequestMessage not sent.");
         }
@@ -127,7 +127,7 @@ namespace OpenIdPortableArea.Tests.Controllers
             fake.Valid = true;
             fake.RedirectResult = new RedirectResult(_openIdUrl);
 
-            var result = _controller.Login(new LoginInput { OpenIdUrl = "http://johncoder.myopenid.com/" });
+            var result = _controller.Login(new LoginInput { OpenIdUrl = _openIdUrl });
 
             Assert.AreSame(fake.RedirectResult, result);
         }
@@ -139,7 +139,7 @@ namespace OpenIdPortableArea.Tests.Controllers
             fake.Valid = true;
             fake.AddClaimAction = () => { throw new InvalidOperationException(); };
 
-            var result = (ViewResult)_controller.Login(new LoginInput { OpenIdUrl = "http://johncoder.myopenid.com/" });
+            var result = (ViewResult)_controller.Login(new LoginInput { OpenIdUrl = _openIdUrl });
 
             Assert.AreEqual("Login", result.ViewName);
         }
