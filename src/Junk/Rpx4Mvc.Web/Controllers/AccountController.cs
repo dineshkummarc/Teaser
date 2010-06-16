@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Configuration;
+using System.Web.Script.Serialization;
 
 namespace Rpx4Mvc.Web.Controllers
 {
@@ -15,6 +16,9 @@ namespace Rpx4Mvc.Web.Controllers
     {
         public ActionResult Login(string token)
         {
+
+            ViewData["token"] = token;
+
             if (string.IsNullOrEmpty(token)) {
                 return View();
             } else {
@@ -24,14 +28,18 @@ namespace Rpx4Mvc.Web.Controllers
                 {
                     RpxProfile profile = rpxLogin.GetProfile(token);
 
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    ViewData["message"] = js.Serialize(profile); 
                     FormsAuthentication.SetAuthCookie(profile.DisplayName, false);
                 }
-                catch (RpxException)
+                catch (RpxException e )
                 {
-                    return RedirectToAction("Login");
+                    //return RedirectToAction("Login");
+                    ViewData["message"] = e.ToString();
+                    return View();
                 }
-
-                return RedirectToAction("Index", "Home");
+                return View();
+                //return RedirectToAction("Index", "Home");
             }
         }
 

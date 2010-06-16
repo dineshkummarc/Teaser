@@ -8,7 +8,7 @@
     }
     else {
 %> 
-    <%=Html.RpxLoginPopup("", "", "Login") %>
+    <%=Html.RpxLoginPopup("", "http://" + Request.Url.Authority + Request.ApplicationPath + "/Account/Login", "Login")%>
 <%
     }
 %>

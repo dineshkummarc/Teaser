@@ -10,7 +10,7 @@
           <NativeDebugging>False</NativeDebugging>
           <SQLDebugging>False</SQLDebugging>
           <PublishCopyOption>RunFiles</PublishCopyOption>
-          <PublishTargetLocation>C:\Root\Dev\Projects\Teaser\src\Teaser.Web.Deploy\Source\</PublishTargetLocation>
+          <PublishTargetLocation>C:\Root\Dev\Projects\Teaser\src\Teaser.Web.Deploy\Teaser.Web.Virtual\</PublishTargetLocation>
           <PublishDeleteAllFiles>True</PublishDeleteAllFiles>
           <PublishCopyAppData>True</PublishCopyAppData>
           <ExternalProgram>
