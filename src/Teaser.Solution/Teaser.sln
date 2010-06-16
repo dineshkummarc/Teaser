@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Junk", "Junk", "{0A7034EE-A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teaser.Web.Test.Watin", "..\Teaser.Web.Test.Watin\Teaser.Web.Test.Watin.csproj", "{39A5C9B0-13D4-4AFA-8F3F-47E16270F55B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpx4Mvc", "..\Junk\Rpx4Mvc\Rpx4Mvc.csproj", "{8E7EAFF4-4F31-461E-9911-6D441E3712BC}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Teaser.vsmdi
@@ -66,6 +68,10 @@ Global
 		{39A5C9B0-13D4-4AFA-8F3F-47E16270F55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39A5C9B0-13D4-4AFA-8F3F-47E16270F55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39A5C9B0-13D4-4AFA-8F3F-47E16270F55B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E7EAFF4-4F31-461E-9911-6D441E3712BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E7EAFF4-4F31-461E-9911-6D441E3712BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E7EAFF4-4F31-461E-9911-6D441E3712BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E7EAFF4-4F31-461E-9911-6D441E3712BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,5 +81,6 @@ Global
 		{63E644C3-0949-4073-9604-DE77AFEB8ECC} = {45999C2E-230F-414B-ABF7-E552076F7626}
 		{6973D8F7-072F-4879-BC2C-65AC3A8A21B3} = {B3665131-B429-44EC-8FFF-1CA5A83ED9C2}
 		{39A5C9B0-13D4-4AFA-8F3F-47E16270F55B} = {63E644C3-0949-4073-9604-DE77AFEB8ECC}
+		{8E7EAFF4-4F31-461E-9911-6D441E3712BC} = {0A7034EE-A7C0-46CD-973E-9D7D825631A0}
 	EndGlobalSection
 EndGlobal

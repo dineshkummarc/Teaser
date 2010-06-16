@@ -1,0 +1,7 @@
+bin/*
+obj/*
+*.suo
+AppSettings.config
+**/**/*.orig
+**/**/**/*.orig
+*.Publish.xml
