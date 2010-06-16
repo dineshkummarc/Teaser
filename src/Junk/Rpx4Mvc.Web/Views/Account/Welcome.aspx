@@ -14,7 +14,7 @@
 
     <table>
      
-    <tr><td><b>calculated path</b></td><td><%= "http://" + Request.Url.Authority + Request.ApplicationPath %></td></tr> 
+    <tr><td><b>calculated path</b></td><td><%=  Request.Url.Authority + Request.ApplicationPath %></td></tr> 
     <tr><td>Request.ApplicationPath</td><td><%= Request.ApplicationPath %></td></tr>
     <tr><td>Request.CurrentExecutionFilePath</td><td><%= Request.CurrentExecutionFilePath%></td></tr>
     <tr><td>Request.FilePath</td><td><%= Request.FilePath%></td></tr>

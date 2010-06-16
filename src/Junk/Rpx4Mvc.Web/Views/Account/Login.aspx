@@ -10,7 +10,7 @@
     <div>token: <%= Html.Encode(ViewData["token"]) %></div>
     <div>message: <%= Html.Encode(ViewData["message"])%></div>
     
-    <%=Html.RpxLoginEmbedded("", "http://" + Request.Url.Authority + Request.ApplicationPath + "/Account/Login")%>
+    <%=Html.RpxLoginEmbedded("",   Request.Url.Authority + Request.ApplicationPath + "/Account/Login")%>
      
    
    
