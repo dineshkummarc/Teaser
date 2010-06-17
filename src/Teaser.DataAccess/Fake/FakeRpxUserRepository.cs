@@ -15,6 +15,7 @@ namespace Teaser.DataAccess.Fake
 
         public FakeRpxUserRepository()
         {
+            var s = ConfigurationSettings.AppSettings["RpxUser1Id"];
             list.Add(new RpxUser { 
                 Id = 1,
                 Identifier =   ConfigurationSettings.AppSettings["RpxUser1Id"],  

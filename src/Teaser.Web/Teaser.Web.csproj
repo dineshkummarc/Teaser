@@ -175,6 +175,7 @@
     <Content Include="Views\Account\Login.aspx" />
     <Content Include="Views\Account\UserList.aspx" />
     <Content Include="Views\Account\Welcome.aspx" />
+    <None Include="AppSettings.config.template" />
     <None Include="T4MVC.settings.t4" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
