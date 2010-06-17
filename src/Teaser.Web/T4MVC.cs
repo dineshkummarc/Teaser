@@ -24,6 +24,7 @@ using T4MVC;
 public static class MVC {
     static readonly ScoreClass s_Score = new ScoreClass();
     public static ScoreClass Score { get { return s_Score; } }
+    public static Teaser.Web.Controllers.AccountController Account = new Teaser.Web.Controllers.T4MVC_AccountController();
     public static Teaser.Web.Controllers.DefaultController Default = new Teaser.Web.Controllers.T4MVC_DefaultController();
     public static Teaser.Web.Controllers.ProductController Product = new Teaser.Web.Controllers.T4MVC_ProductController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -33,7 +34,7 @@ namespace T4MVC {
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public class ScoreClass {
         public readonly string Name = "Score";
-        public Teaser.Web.Areas.Score.Controllers.StartController Home = new Teaser.Web.Areas.Score.Controllers.T4MVC_HomeController();
+        public Teaser.Web.Areas.Score.Controllers.StartController Start = new Teaser.Web.Areas.Score.Controllers.T4MVC_StartController();
         public T4MVC.Score.SharedController Shared = new T4MVC.Score.SharedController();
     }
 }

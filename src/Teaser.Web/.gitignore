@@ -4,3 +4,4 @@ obj/**
 *.generated.*
 AppSettings.config
 *.Publish.xml
+T4MVC.cs
