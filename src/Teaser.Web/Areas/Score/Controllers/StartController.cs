@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Teaser.Web.Areas.Score.Controllers
 {
-    public partial class HomeController : Controller
+    public partial class StartController : Controller
     {
         //
         // GET: /Score/Home/

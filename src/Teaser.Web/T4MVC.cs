@@ -33,7 +33,7 @@ namespace T4MVC {
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public class ScoreClass {
         public readonly string Name = "Score";
-        public Teaser.Web.Areas.Score.Controllers.HomeController Home = new Teaser.Web.Areas.Score.Controllers.T4MVC_HomeController();
+        public Teaser.Web.Areas.Score.Controllers.StartController Home = new Teaser.Web.Areas.Score.Controllers.T4MVC_HomeController();
         public T4MVC.Score.SharedController Shared = new T4MVC.Score.SharedController();
     }
 }

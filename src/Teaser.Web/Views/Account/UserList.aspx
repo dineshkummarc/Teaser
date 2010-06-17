@@ -4,6 +4,10 @@
 
 <asp:Content ID="indexTitle" ContentPlaceHolderID="head" runat="server">
     <title>UserList</title>
+    
+    <style type="text/css" >
+        .hiddenLinks{ position:absolute; bottom:1%; left:0; }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -40,6 +44,12 @@
 		</tbody>
     </table>
     
+    <div class="hiddenLinks">
+        <div><%= Html.ActionLink("Welcome", "Welcome", "Account")%></div>
+        <div><%= Html.ActionLink("Login", "Login", "Account")%></div>
+        <div><%= Html.ActionLink("RpxUsers", "UserList", "Account")%></div>
+    </div>
+
 
 </asp:Content>
 

@@ -7,6 +7,7 @@ namespace Teaser.Web.Core
 		public static class Nav
         {
             public static readonly string Products = "products";
+            public static readonly string Account = "Account";
             public static readonly string Score = "Score";
 		}
 

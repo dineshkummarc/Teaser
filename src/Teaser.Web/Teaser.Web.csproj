@@ -77,7 +77,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\Score\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Score\Controllers\StartController.cs" />
     <Compile Include="Areas\Score\ScoreAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AutoMapModelAttribute.cs" />
@@ -162,12 +162,13 @@
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Score\Views\Home\Index.aspx" />
+    <Content Include="Areas\Score\Views\Start\Index.aspx" />
     <Content Include="Areas\Score\Views\Web.config" />
     <Content Include="Views\Default\About.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppSettings.config" />
+    <Content Include="favicon.ico" />
     <Content Include="Views\Account\Login.aspx" />
     <Content Include="Views\Account\UserList.aspx" />
     <Content Include="Views\Account\Welcome.aspx" />

@@ -17,7 +17,7 @@
 
         <div id="header">
             <div id="title">
-                <h1>Teaser.Web</h1>
+                <h1>Teaser</h1>
             </div>
               
             <div id="logindisplay">
@@ -28,11 +28,12 @@
             
                 <ul id="menu">              
                     <li><%= Html.ActionLink("Default", "Index", "Default")%></li>
-                    <li><%= Html.ActionLink("Products", "Index", "Product", 
+                    <%--<li><%= Html.ActionLink("Products", "Index", "Product", 
                         	null, new { rel = Teaser.Web.Core.StableSite.Nav.Products })%></li>
                     <li><%= Html.ActionLink("Score", "Index", "Score", 
-                        	null, new { rel = Teaser.Web.Core.StableSite.Nav.Products })%></li>
-                    <li><%= Html.ActionLink("Account", "Welcome", "Account")%></li>
+                        	null, new { rel = Teaser.Web.Core.StableSite.Nav.Score })%></li>--%>
+                    <li><%= Html.ActionLink("Account", "UserList", "Account",
+                        	null, new { rel = Teaser.Web.Core.StableSite.Nav.Account })%></li>
                 </ul>
             
             </div>

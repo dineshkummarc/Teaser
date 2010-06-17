@@ -53,7 +53,7 @@ namespace Teaser.Web.Controllers
                 {
                     return RedirectToAction("Login");
                 }
-                return RedirectToAction("Welcome", "Account");
+                return RedirectToAction("UserList", "Account");
             }
         }
 
@@ -61,7 +61,7 @@ namespace Teaser.Web.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Welcome", "Account");
+            return RedirectToAction("Index", "Default");
         }
 
 

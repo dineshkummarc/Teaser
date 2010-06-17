@@ -17,7 +17,8 @@ namespace Teaser.Web.Areas.Score
             context.MapRoute(
                 "Score_default",
                 "Score/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = "" }
+                //new { action = "Index", id = UrlParameter.Optional }
             );
         }
     }
