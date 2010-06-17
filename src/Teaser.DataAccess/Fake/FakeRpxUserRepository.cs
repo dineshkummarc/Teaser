@@ -41,7 +41,7 @@ namespace Teaser.DataAccess.Fake
             }
             else
             {
-                int maxId = this.list.Max(x => x.Id);
+                int maxId = (this.list.Count <= 0) ? 0 : this.list.Max(x => x.Id);
                 item.Id = maxId + 1;
             }
             this.list.Add(item);

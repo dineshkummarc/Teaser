@@ -7,7 +7,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div>token: <%= Html.Encode(ViewData["token"]) %></div>
     <h2>Welcome</h2>
 
 

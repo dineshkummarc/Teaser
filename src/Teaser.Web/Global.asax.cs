@@ -10,6 +10,7 @@ using Teaser.Web.Core;
 using Teaser.DataAccess.Interfaces;
 using Teaser.DataAccess.Fake;
 using Teaser.Service.RpxUserServices;
+using StructureMap.Attributes;
 
 
 namespace Teaser.Web
@@ -69,10 +70,10 @@ namespace Teaser.Web
                     scan.WithDefaultConventions();
                     scan.Assembly(GetType().Assembly);
                 });
-                x.ForRequestedType(typeof(IRpxUserService)).Use(typeof(RpxUserService));
+                x.ForRequestedType(typeof(IRpxUserService)).CacheBy(InstanceScope.Singleton).Use(typeof(RpxUserService));
 
-                x.ForRequestedType(typeof(IProductRepository)).Use(typeof(FakeProductRepository));
-                x.ForRequestedType(typeof(IRpxUserRepository)).Use(typeof(FakeRpxUserRepository));
+                x.ForRequestedType(typeof(IProductRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeProductRepository));
+                x.ForRequestedType(typeof(IRpxUserRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeRpxUserRepository));
             });
 
 

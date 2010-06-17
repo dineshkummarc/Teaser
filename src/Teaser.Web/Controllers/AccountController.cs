@@ -26,9 +26,6 @@ namespace Teaser.Web.Controllers
 
         public ActionResult Login(string token)
         {
-
-            ViewData["token"] = token;
-
             if (string.IsNullOrEmpty(token))
             {
                 return View();
@@ -39,19 +36,23 @@ namespace Teaser.Web.Controllers
                 IRpxLogin rpxLogin = new RpxLogin(rpxApiKey);
                 try
                 {
-                    RpxProfile profile = rpxLogin.GetProfile(token);
-
-                    JavaScriptSerializer js = new JavaScriptSerializer();
-                    ViewData["message"] = js.Serialize(profile);
+                    RpxProfile profile = rpxLogin.GetProfile(token); 
+                    JavaScriptSerializer js = new JavaScriptSerializer(); 
+                    RpxUser user = new RpxUser
+                    {
+                        Identifier = profile.Identifier,
+                        Url = profile.Url,
+                        DisplayName = profile.DisplayName,
+                        ProviderName = profile.ProviderName,
+                        JsonData = js.Serialize(profile)
+                    };
+                    this._rpxUserService.Save(user);
                     FormsAuthentication.SetAuthCookie(profile.DisplayName, false);
                 }
                 catch (RpxException )
                 {
                     return RedirectToAction("Login");
-                    //ViewData["message"] = e.ToString();
-                    //return View();
                 }
-                //return View();
                 return RedirectToAction("Welcome", "Account");
             }
         }
