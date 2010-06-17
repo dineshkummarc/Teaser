@@ -22,6 +22,7 @@ namespace Rpx4Mvc
         public static string RpxLoginEmbedded(this HtmlHelper helper, string applicationName, string tokenUrl)
         {
             applicationName = ConfigurationSettings.AppSettings["RpxAppName"];
+            tokenUrl = "http://" + tokenUrl.Replace("//", "/");
             return "<iframe src=\"https://" + applicationName + ".rpxnow.com/openid/embed?token_url=" + tokenUrl + "\" scrolling=\"no\" frameBorder=\"no\" style=\"width:400px;height:240px;\" class=\"rpx-embedded\"></iframe>";
         }
 
