@@ -23,6 +23,13 @@ namespace Teaser.Service.RpxUserServices
         {
             return this._rpxUserRepository.Get().ToList<RpxUser>();
         }
+        
+        
+        public RpxUser  GetByIdentifier(string identifier)
+        {
+            return this._rpxUserRepository.Get()
+                .Where(x => x.Identifier == identifier).SingleOrDefault();
+        }
 
         public RpxUser Save(RpxUser item)
         {

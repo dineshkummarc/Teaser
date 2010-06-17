@@ -14,7 +14,7 @@ using Teaser.Web.Models;
 namespace Teaser.Web.Controllers
 {
     [HandleError]
-    public class AccountController : Controller
+    public partial class AccountController : Controller
     {
         private readonly IRpxUserService _rpxUserService;
 
@@ -24,7 +24,7 @@ namespace Teaser.Web.Controllers
         }
 
 
-        public ActionResult Login(string token)
+        public virtual ActionResult Login(string token)
         {
             if (string.IsNullOrEmpty(token))
             {
@@ -38,14 +38,13 @@ namespace Teaser.Web.Controllers
                 {
                     RpxProfile profile = rpxLogin.GetProfile(token); 
                     JavaScriptSerializer js = new JavaScriptSerializer(); 
-                    RpxUser user = new RpxUser
-                    {
-                        Identifier = profile.Identifier,
-                        Url = profile.Url,
-                        DisplayName = profile.DisplayName,
-                        ProviderName = profile.ProviderName,
-                        JsonData = js.Serialize(profile)
-                    };
+                    RpxUser user = this._rpxUserService.GetByIdentifier(profile.Identifier);
+                    if (user == null) { user = new RpxUser(); }
+                    user.Identifier = profile.Identifier;
+                    user.Url = profile.Url;
+                    user.DisplayName = profile.DisplayName;
+                    user.ProviderName = profile.ProviderName;
+                    user.JsonData = js.Serialize(profile);
                     this._rpxUserService.Save(user);
                     FormsAuthentication.SetAuthCookie(profile.DisplayName, false);
                 }
@@ -58,21 +57,21 @@ namespace Teaser.Web.Controllers
         }
 
         [Authorize]
-        public ActionResult Logout()
+        public virtual ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Default");
         }
 
 
-        public ActionResult Welcome()
+        public virtual ActionResult Welcome()
         {
             return View();
         }
 
 
         [AutoMapModel(typeof(IEnumerable<RpxUser>), typeof(RpxUserModel[]))]
-        public ActionResult UserList()
+        public virtual ActionResult UserList()
         {
             var users =  _rpxUserService.Get();
             return View(users);

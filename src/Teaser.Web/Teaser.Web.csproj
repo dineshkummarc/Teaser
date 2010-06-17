@@ -77,6 +77,9 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Score\Controllers\StartController.cs" />
     <Compile Include="Areas\Score\ScoreAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -100,10 +103,10 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Score.HomeController.generated.cs">
+    <Compile Include="Score.SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Score.SharedController.generated.cs">
+    <Compile Include="Score.StartController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="SharedController.generated.cs">

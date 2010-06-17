@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Teaser.DataAccess.Interfaces;
 using Teaser.Entities;
+using System.Configuration;
 
 namespace Teaser.DataAccess.Fake
 {
@@ -13,8 +14,15 @@ namespace Teaser.DataAccess.Fake
         IList<RpxUser> list = new List<RpxUser>();
 
         public FakeRpxUserRepository()
-        {  
+        {
+            list.Add(new RpxUser { 
+                Id = 1,
+                Identifier =   ConfigurationSettings.AppSettings["RpxUser1Id"],  
+                SiteUserId = 1,
+                DisplayName =  ConfigurationSettings.AppSettings["RpxUser1Name"]  
+            });
         }
+
 
 
 
