@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Areas\Score\Controllers\HomeController.cs" />
     <Compile Include="Areas\Score\ScoreAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AutoMapModelAttribute.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -146,6 +147,10 @@
       <Project>{0E35B721-13D9-40C7-B851-9BAF1DB3C0DB}</Project>
       <Name>Teaser.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Teaser.Rpx4Mvc\Rpx4Mvc.csproj">
+      <Project>{8E7EAFF4-4F31-461E-9911-6D441E3712BC}</Project>
+      <Name>Rpx4Mvc</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Teaser.Service\Teaser.Service.csproj">
       <Project>{A6C1B1CA-088E-48F4-BDB0-2363F78561A0}</Project>
       <Name>Teaser.Service</Name>
@@ -161,6 +166,9 @@
     <Content Include="Views\Default\About.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppSettings.config" />
+    <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Account\Welcome.aspx" />
     <None Include="T4MVC.settings.t4" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

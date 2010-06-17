@@ -2,13 +2,13 @@
 <%
     if (Request.IsAuthenticated) {
 %>
-        Welcome <b><%= Html.Encode(Page.User.Identity.Name) %></b>!
-        [ <%= Html.ActionLink("Log Off", "LogOff", "Account") %> ]
+    Welcome, <b><%= Html.Encode(Page.User.Identity.Name) %></b>!
+    <%= Html.ActionLink("Logout", "Logout", "Account") %>
 <%
     }
     else {
 %> 
-        [ <%= Html.ActionLink("Log On", "LogOn", "Account") %> ]
+    <%=Html.RpxLoginPopup("",  Request.Url.Authority + Request.ApplicationPath + "/Account/Login/", "Login")%>
 <%
     }
 %>

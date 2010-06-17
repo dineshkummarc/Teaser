@@ -1,0 +1,11 @@
+﻿<appSettings>
+
+
+  <add key="RpxApiKey" value="Rpx_Api_Key_HERE"/> 
+  <add key="RpxAppName" value="RpxAppName_HERE"/>
+  <add key="RpxReturnUrl" value="http://localhost:1234/Account/Login"/>
+
+  
+  
+
+</appSettings>

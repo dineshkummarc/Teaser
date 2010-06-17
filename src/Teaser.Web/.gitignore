@@ -2,4 +2,5 @@ bin/**
 obj/**
 *.user
 *.generated.*
+AppSettings.config
 *.Publish.xml
