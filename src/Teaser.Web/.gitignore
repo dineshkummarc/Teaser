@@ -3,4 +3,5 @@ obj/**
 *.user
 *.generated.*
 AppSettings.config
+T4MVC.cs
 *.Publish.xml
