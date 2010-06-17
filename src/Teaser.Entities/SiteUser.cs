@@ -8,21 +8,17 @@ namespace Teaser.Entities
 {
     public class SiteUser  : BaseItem
     {
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string OpenId { get; set; } 
+        public string Name { get; set; } 
 
         
         public SiteUser()
         {
             this.Id = -1;
         }
-        public SiteUser(int id, string name, string password, string openId)
+        public SiteUser(int id, string name )
         {
             this.Id = id;
-            this.Name = name;
-            this.Password = password;
-            this.OpenId = openId;
+            this.Name = name; 
         } 
 
     }

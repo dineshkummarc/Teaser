@@ -5,8 +5,8 @@
 <%@ Import Namespace="Teaser.Entities"%>
 <%@ Import Namespace="Teaser.Web.Models"%>
 
-<asp:Content ID="indexTitle" ContentPlaceHolderID="TitleContent" runat="server">
-    Home Page
+<asp:Content ID="indexTitle" ContentPlaceHolderID="head" runat="server">
+    <title>Home Page</title>
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">

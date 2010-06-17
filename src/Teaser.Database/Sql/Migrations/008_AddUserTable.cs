@@ -16,9 +16,7 @@ namespace Teaser.Database.Sql.Migrations
         {
             Database.AddTable("SiteUser",
                 new Column("Id", DbType.Int32, ColumnProperty.PrimaryKeyWithIdentity),
-                new Column("Name", DbType.String, 50),
-                new Column("Password", DbType.String, 50),
-                new Column("OpenId", DbType.String, 500)
+                new Column("Name", DbType.String, 50)
             );
 
             AddSampleData();
@@ -42,7 +40,7 @@ namespace Teaser.Database.Sql.Migrations
 
         private void AddSiteUsers()
         {
-            string[] h = { "Id", "Name", "Password", "OpenId" };
+            string[] h = { "Id", "Name"  };
 
             ISiteUserRepository repo = new FakeSiteUserRepository();
             var list = repo.Get();
@@ -51,9 +49,7 @@ namespace Teaser.Database.Sql.Migrations
                 Database.Insert("SiteUser", h, new string[] 
                 { 
                     i.Id.ToString(), 
-                    i.Name.ToString() , 
-                    i.Password.ToString() , 
-                    i.OpenId.ToString() 
+                    i.Name.ToString()  
                 });
             }
         }

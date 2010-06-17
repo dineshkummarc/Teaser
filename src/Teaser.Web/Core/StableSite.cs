@@ -23,6 +23,11 @@ namespace Teaser.Web.Core
                     public static readonly string Index = "ScoreHomeIndex";
                 }
             }
+            public static class Account
+            {
+                public static readonly string UserList = "Account_UserList";
+            } 
+
 		}
 	}
 }

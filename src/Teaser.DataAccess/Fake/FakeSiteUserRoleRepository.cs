@@ -47,5 +47,20 @@ namespace Teaser.DataAccess.Fake
         }
 
 
+
+        #region IRepository<SiteUserRole> Members
+
+
+        public SiteUserRole Save(SiteUserRole entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(SiteUserRole entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

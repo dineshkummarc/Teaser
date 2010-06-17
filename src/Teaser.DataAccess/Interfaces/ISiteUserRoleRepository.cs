@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Teaser.DataAccess.Interfaces
 {
-    public interface ISiteUserRoleRepository
+    public interface ISiteUserRoleRepository : IRepository<SiteUserRole>
     {
         IQueryable<SiteUserRole> Get();
     }

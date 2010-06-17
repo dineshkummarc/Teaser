@@ -1,7 +1,8 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Welcome
+
+<asp:Content ID="indexTitle" ContentPlaceHolderID="head" runat="server">
+    <title>Welcome</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -11,6 +12,7 @@
 
 
     <div><%= Html.ActionLink("Login", "Login", "Account")%></div>
+    <div><%= Html.ActionLink("RpxUsers", "UserList", "Account")%></div>
 
     <table>
      

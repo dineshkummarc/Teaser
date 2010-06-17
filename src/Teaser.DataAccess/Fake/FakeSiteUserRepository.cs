@@ -16,7 +16,7 @@ namespace Teaser.DataAccess.Fake
         {
             for (int i = 1; i <= 9; i++)
             {
-                list.Add(new SiteUser(i, "User" + i, "", "someOpenId" + i));
+                list.Add(new SiteUser(i, "User" + i   ));
             } 
         }
 
@@ -28,5 +28,19 @@ namespace Teaser.DataAccess.Fake
 
 
 
+        #region IRepository<SiteUser> Members
+
+
+        public SiteUser Save(SiteUser entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(SiteUser entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

@@ -28,5 +28,48 @@ namespace Teaser.DataAccess.Fake
 
 
 
+
+        #region IRepository<Role> Members
+
+
+        public Role Save(Role entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(Role entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region IRoleRepository Members
+
+        IQueryable<Role> IRoleRepository.Get()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region IRepository<Role> Members
+
+        IQueryable<Role> IRepository<Role>.Get()
+        {
+            throw new NotImplementedException();
+        }
+
+        Role IRepository<Role>.Save(Role entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        bool IRepository<Role>.Delete(Role entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

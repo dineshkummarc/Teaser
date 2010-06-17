@@ -95,6 +95,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductForm.cs" />
+    <Compile Include="Models\RpxUserModel.cs" />
     <Compile Include="ProductController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -168,6 +169,7 @@
   <ItemGroup>
     <Content Include="AppSettings.config" />
     <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Account\UserList.aspx" />
     <Content Include="Views\Account\Welcome.aspx" />
     <None Include="T4MVC.settings.t4" />
     <None Include="T4MVC.tt">
