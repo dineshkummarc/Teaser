@@ -44,14 +44,6 @@ namespace Teaser.DataAccess.Fake
 
         #endregion
 
-        #region IRoleRepository Members
-
-        IQueryable<Role> IRoleRepository.Get()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
 
         #region IRepository<Role> Members
 
