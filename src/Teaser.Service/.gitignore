@@ -3,6 +3,7 @@ TestResults/**
 bin/*
 obj/*
 AppSettings.config
+*.csproj.user
 **/**/*.orig
 **/**/**/*.orig
 *.Publish.xml

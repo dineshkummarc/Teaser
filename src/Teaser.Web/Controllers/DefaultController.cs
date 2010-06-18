@@ -11,7 +11,7 @@ namespace Teaser.Web.Controllers
 
         public virtual ActionResult Index()
         {
-            ViewData["Message"] = "Welcome to ASP.NET MVC!";
+            ViewData["Message"] = "Welcome to Teaser League!";
 
             return View();
         }

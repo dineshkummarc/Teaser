@@ -11,6 +11,7 @@ using Teaser.DataAccess.Interfaces;
 using Teaser.DataAccess.Fake;
 using Teaser.Service.RpxUserServices;
 using StructureMap.Attributes;
+using Teaser.Service.SiteUserServices;
 
 
 namespace Teaser.Web
@@ -27,6 +28,7 @@ namespace Teaser.Web
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
+                //MVC.Default.Index() // use T4MVC
                 new { controller = "Default", action = "Index", id = "" } // Parameter defaults
                 //new { controller = "Default", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
@@ -72,9 +74,12 @@ namespace Teaser.Web
                     scan.Assembly(GetType().Assembly);
                 });
                 x.ForRequestedType(typeof(IRpxUserService)).CacheBy(InstanceScope.Singleton).Use(typeof(RpxUserService));
+                x.ForRequestedType(typeof(ISiteUserService)).CacheBy(InstanceScope.Singleton).Use(typeof(SiteUserService));
+
 
                 x.ForRequestedType(typeof(IProductRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeProductRepository));
                 x.ForRequestedType(typeof(IRpxUserRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeRpxUserRepository));
+                x.ForRequestedType(typeof(ISiteUserRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeSiteUserRepository));
             });
 
 

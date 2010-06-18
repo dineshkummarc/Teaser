@@ -4,8 +4,7 @@ using System.Threading;
 using MbUnit.Framework;
 using NBehave.Spec.MbUnit;
 using Teaser.Web.Models;
-using WatiN.Core;
-using Teaser.Web.Models;
+using WatiN.Core; 
 using Teaser.Web.UITests;
 using Teaser.Web.Core;
 

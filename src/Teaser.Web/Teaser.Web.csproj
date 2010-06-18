@@ -86,6 +86,7 @@
     <Compile Include="Controllers\AutoMapModelAttribute.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SiteUserController.cs" />
     <Compile Include="Core\AutoMapperConfiguration.cs" />
     <Compile Include="Core\ControllerFactory.cs" />
     <Compile Include="Core\HtmlHelperExtensions.cs" />
@@ -99,6 +100,7 @@
     </Compile>
     <Compile Include="Models\ProductForm.cs" />
     <Compile Include="Models\RpxUserModel.cs" />
+    <Compile Include="Models\SiteUserModel.cs" />
     <Compile Include="ProductController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -110,6 +112,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SiteUserController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4MVC.cs">
@@ -172,9 +177,12 @@
   <ItemGroup>
     <Content Include="AppSettings.config" />
     <Content Include="favicon.ico" />
+    <Content Include="Views\Account\Index.aspx" />
     <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Account\UserInfo.aspx" />
     <Content Include="Views\Account\UserList.aspx" />
     <Content Include="Views\Account\Welcome.aspx" />
+    <Content Include="Views\SiteUser\Index.aspx" />
     <None Include="AppSettings.config.template" />
     <None Include="T4MVC.settings.t4" />
     <None Include="T4MVC.tt">

@@ -56,7 +56,9 @@
     <Compile Include="Fake\FakeTeaserTeamRepository.cs" />
     <Compile Include="Fake\FakeSiteUserRepository.cs" />
     <Compile Include="Fake\FakeWeekRepository.cs" />
-    <Compile Include="Interfaces\IRpxUserRepository.cs" />
+    <Compile Include="Interfaces\IRpxUserRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Interfaces\ISiteUserRoleRepository.cs" />
     <Compile Include="Interfaces\IRoleRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
@@ -75,11 +77,6 @@
       <Project>{0E35B721-13D9-40C7-B851-9BAF1DB3C0DB}</Project>
       <Name>Teaser.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="AppSettings.config" />
-    <None Include="AppSettings.config.template" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

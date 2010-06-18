@@ -10,6 +10,7 @@ using System.Configuration;
 using Teaser.Service.RpxUserServices;
 using Teaser.Entities;
 using Teaser.Web.Models;
+using Teaser.Service.SiteUserServices;
 
 namespace Teaser.Web.Controllers
 {
@@ -17,10 +18,12 @@ namespace Teaser.Web.Controllers
     public partial class AccountController : Controller
     {
         private readonly IRpxUserService _rpxUserService;
+        private readonly ISiteUserService _siteUserService;
 
-        public AccountController(IRpxUserService rpxUserService)
+        public AccountController(IRpxUserService rpxUserService, ISiteUserService  siteUserService)
         {
             _rpxUserService = rpxUserService;
+            _siteUserService = siteUserService;
         }
 
 
@@ -38,23 +41,44 @@ namespace Teaser.Web.Controllers
                 {
                     RpxProfile profile = rpxLogin.GetProfile(token); 
                     JavaScriptSerializer js = new JavaScriptSerializer(); 
-                    RpxUser user = this._rpxUserService.GetByIdentifier(profile.Identifier);
-                    if (user == null) { user = new RpxUser(); }
-                    user.Identifier = profile.Identifier;
-                    user.Url = profile.Url;
-                    user.DisplayName = profile.DisplayName;
-                    user.ProviderName = profile.ProviderName;
-                    user.JsonData = js.Serialize(profile);
-                    this._rpxUserService.Save(user);
+                    RpxUser rpxUser = this._rpxUserService.GetByIdentifier(profile.Identifier);
+                    if (rpxUser == null) { rpxUser = new RpxUser(); }
+                    rpxUser.Identifier = profile.Identifier;
+                    rpxUser.Url = profile.Url;
+                    rpxUser.DisplayName = profile.DisplayName;
+                    rpxUser.ProviderName = profile.ProviderName;
+                    rpxUser.JsonData = js.Serialize(profile);
+                    if (rpxUser.SiteUserId == null)
+                    {
+                        var su = this._siteUserService.GetByName(profile.DisplayName);
+                        if (su == null)
+                        {
+                            su = this._siteUserService.Save(new SiteUser { Name = profile.DisplayName });
+                            rpxUser.SiteUserId = su.Id;
+                        }
+                        else
+                        {
+                            throw new Exception("User already in this table");
+                        }
+                    }
+                    this._rpxUserService.Save(rpxUser);
                     FormsAuthentication.SetAuthCookie(profile.DisplayName, false);
+                    return  RedirectToAction( MVC.Account.UserInfo(rpxUser.Id)); //  RedirectToAction("UserInfo", "Account"); 
                 }
                 catch (RpxException )
                 {
                     return RedirectToAction("Login");
                 }
-                return RedirectToAction("UserList", "Account");
             }
         }
+
+        [AutoMapModel(typeof(RpxUser), typeof(RpxUserModel ))]
+        public virtual ActionResult UserInfo(int id)
+        {
+            var rpxUser = this._rpxUserService.Get().Where(x=>x.Id == id).SingleOrDefault();
+            return View(rpxUser);
+        }
+
 
         [Authorize]
         public virtual ActionResult Logout()
@@ -65,6 +89,11 @@ namespace Teaser.Web.Controllers
 
 
         public virtual ActionResult Welcome()
+        {
+            return View();
+        }
+
+        public virtual ActionResult Index()
         {
             return View();
         }

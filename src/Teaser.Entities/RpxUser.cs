@@ -8,7 +8,7 @@ namespace Teaser.Entities
 {
     public class RpxUser : BaseItem
     { 
-        public int SiteUserId { get; set; } 
+        public int? SiteUserId { get; set; } 
         public string Identifier { get; set; }
         public string ProviderName { get; set; } 
         public string DisplayName { get; set; }

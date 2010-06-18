@@ -11,7 +11,8 @@ namespace Teaser.Web.Core
         {
             Mapper.CreateMap<Product, ProductListModel>();
             Mapper.CreateMap<Product, ProductForm>();
-            Mapper.CreateMap<RpxUser, RpxUserModel>(); 
+            Mapper.CreateMap<RpxUser, RpxUserModel>();
+            Mapper.CreateMap<SiteUser, SiteUserModel>(); 
 		}
 	}
 }
