@@ -58,6 +58,7 @@
     <Compile Include="SiteUserRole.cs" />
     <Compile Include="TeaserTeam.cs" />
     <Compile Include="SiteUser.cs" />
+    <Compile Include="UserTeaserTeam.cs" />
     <Compile Include="Week.cs" />
   </ItemGroup>
   <ItemGroup>

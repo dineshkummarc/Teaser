@@ -88,6 +88,7 @@
     <Compile Include="Sql\Migrations\008_AddUserTable.cs" />
     <Compile Include="Sql\Migrations\009_AddUserRoleTable.cs" />
     <Compile Include="Sql\Migrations\010_AddRpxUserTable.cs" />
+    <Compile Include="Sql\Migrations\011_AddUserTeaserTeamTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Sql\build.bat" />
