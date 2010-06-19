@@ -24,6 +24,7 @@
 				<td>Id</td>
 				<td>Identifier</td>
 				<td>ProviderName</td>
+				<td>SiteUserName</td>
 				<td>DisplayName</td>
 				<td>JsonData</td>
 			</tr>
@@ -35,6 +36,7 @@
 				<td><%= Html.Span(m => m[i].Id)  %></td>
 				<td><%= Html.Span(m => m[i].Identifier)%></td>
 				<td><%= Html.Span(m => m[i].ProviderName)%></td>
+				<td><%= Html.Span(m => m[i].SiteUserName)%></td>
 				<td><%= Html.Span(m => m[i].DisplayName)%></td>
 				<td><%= Html.Span(m => m[i].JsonData)%></td>
 			</tr>

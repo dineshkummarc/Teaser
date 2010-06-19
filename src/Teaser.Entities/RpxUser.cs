@@ -7,8 +7,9 @@ using Teaser.Entities.Base;
 namespace Teaser.Entities
 {
     public class RpxUser : BaseItem
-    { 
-        public int? SiteUserId { get; set; } 
+    {
+        public int? SiteUserId { get; set; }
+        public SiteUser SiteUser { get; set; } 
         public string Identifier { get; set; }
         public string ProviderName { get; set; } 
         public string DisplayName { get; set; }
@@ -51,6 +52,7 @@ limitedData	true if Janrain Engage was able to retrieve only limited public data
         public RpxUser()
         {
             this.Id = -1;
+            this.SiteUser = new SiteUser();
         } 
 
     }

@@ -179,6 +179,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Views\Account\Index.aspx" />
     <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Account\TicketInfo.aspx" />
     <Content Include="Views\Account\UserInfo.aspx" />
     <Content Include="Views\Account\UserList.aspx" />
     <Content Include="Views\Account\Welcome.aspx" />

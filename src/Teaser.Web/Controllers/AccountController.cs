@@ -48,28 +48,33 @@ namespace Teaser.Web.Controllers
                     rpxUser.DisplayName = profile.DisplayName;
                     rpxUser.ProviderName = profile.ProviderName;
                     rpxUser.JsonData = js.Serialize(profile);
+                     
                     if (rpxUser.SiteUserId == null)
                     {
                         var su = this._siteUserService.GetByName(profile.DisplayName);
                         if (su == null)
                         {
                             su = this._siteUserService.Save(new SiteUser { Name = profile.DisplayName });
-                            rpxUser.SiteUserId = su.Id;
+                            
                         }
-                        else
-                        {
-                            throw new Exception("User already in this table");
-                        }
+                        rpxUser.SiteUserId = su.Id;
                     }
                     this._rpxUserService.Save(rpxUser);
                     FormsAuthentication.SetAuthCookie(profile.DisplayName, false);
                     return  RedirectToAction( MVC.Account.UserInfo(rpxUser.Id)); //  RedirectToAction("UserInfo", "Account"); 
+                     
+                    //return  RedirectToAction( MVC.Account.UserInfo(rpxUser.Id)); //  RedirectToAction("UserInfo", "Account"); 
                 }
                 catch (RpxException )
                 {
                     return RedirectToAction("Login");
                 }
             }
+        }
+        public virtual ActionResult TicketInfo()
+        {  
+            ViewData["UserData"] = User.Identity.Name;
+            return View();
         }
 
         [AutoMapModel(typeof(RpxUser), typeof(RpxUserModel ))]
