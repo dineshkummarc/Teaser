@@ -63,7 +63,9 @@ namespace Teaser.Database.Sql.Migrations
             string[] h = { "Id", "Name"  };
 
             IRoleRepository repo = new FakeRoleRepository();
+            Database["SqlServer"].ExecuteNonQuery(@"PRINT 'here'");
             var list = repo.Get();
+            Database["SqlServer"].ExecuteNonQuery(@"PRINT 'here2'");
             foreach (Role i in list)
             {
                 Database.Insert("Role", h, new string[] 
