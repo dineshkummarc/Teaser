@@ -101,6 +101,7 @@
     <Compile Include="Models\ProductForm.cs" />
     <Compile Include="Models\RpxUserModel.cs" />
     <Compile Include="Models\SiteUserModel.cs" />
+    <Compile Include="Models\UserProfileModel.cs" />
     <Compile Include="ProductController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -182,6 +183,7 @@
     <Content Include="Views\Account\TicketInfo.aspx" />
     <Content Include="Views\Account\UserInfo.aspx" />
     <Content Include="Views\Account\UserList.aspx" />
+    <Content Include="Views\Account\UserProfile.aspx" />
     <Content Include="Views\Account\Welcome.aspx" />
     <Content Include="Views\SiteUser\Index.aspx" />
     <None Include="AppSettings.config.template" />

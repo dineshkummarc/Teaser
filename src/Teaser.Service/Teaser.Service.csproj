@@ -54,6 +54,8 @@
     <Compile Include="RpxUserServices\RpxUserService.cs" />
     <Compile Include="SiteUserServices\ISiteUserService.cs" />
     <Compile Include="SiteUserServices\SiteUserService.cs" />
+    <Compile Include="UserProfileServices\IUserProfileService.cs" />
+    <Compile Include="UserProfileServices\UserProfileService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Teaser.DataAccess\Teaser.DataAccess.csproj">

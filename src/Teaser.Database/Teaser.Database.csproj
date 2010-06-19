@@ -94,6 +94,7 @@
     <None Include="Sql\build.bat" />
     <None Include="Sql\migrate.proj" />
     <None Include="Sql\Migrator.Targets" />
+    <Content Include="Sql\Queries\UserProfile.linq.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Teaser.DataAccess\Teaser.DataAccess.csproj">

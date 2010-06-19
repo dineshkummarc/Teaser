@@ -82,13 +82,14 @@ namespace Teaser.Web
                 x.ForRequestedType(typeof(IProductRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeProductRepository));
                 x.ForRequestedType(typeof(IRpxUserRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeRpxUserRepository));
                 x.ForRequestedType(typeof(ISiteUserRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeSiteUserRepository));
-
+                x.ForRequestedType(typeof(IUserTeaserTeamRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeUserTeaserTeamRepository));
+                
 
                 //x.ForRequestedType(typeof(IProductRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(SqlProductRepository));
                 //x.ForRequestedType(typeof(IRpxUserRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(SqlRpxUserRepository));
                 //x.ForRequestedType(typeof(ISiteUserRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(SqlSiteUserRepository));
-
-
+                //x.ForRequestedType(typeof(IUserTeaserTeamRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(SqlUserTeaserTeamRepository));
+                 
             });
 
 

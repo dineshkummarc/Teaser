@@ -1,0 +1,29 @@
+<Query Kind="Expression">
+  <Connection>
+    <ID>a29834e9-42c5-4acf-b0b7-873e739c9544</ID>
+    <Persist>true</Persist>
+    <Server>.\SQLEXPRESS</Server>
+    <Database>Teaser</Database>
+    <ShowServer>true</ShowServer>
+  </Connection>
+</Query>
+
+from u in User_TeaserTeams
+
+	  join rpxUser in RpxUsers on u.SiteUserId equals rpxUser.SiteUserId
+	  join ur in SiteUser_Roles on u.SiteUserId equals ur.SiteUserId
+select new
+{
+	u.Id,
+	u.SiteUserId,
+	u.TeaserTeamId, 
+	SiteUserName = u.SiteUser.Name, 
+	RoleName = ur.Role.Name,
+	TeaserTeamName = u.TeaserTeam.Name, 
+	TeaserTeamLeagueName = u.TeaserTeam.League.Name, 
+	rpxUser.DisplayName, 
+	rpxUser.Identifier
+}
+
+
+

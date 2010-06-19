@@ -18,6 +18,7 @@ namespace Teaser.DataAccess.Fake
             var s = ConfigurationSettings.AppSettings["RpxUser1Id"];
             list.Add(new RpxUser { 
                 Id = 1,
+                SiteUserId = 1,
                 Identifier =  "https://www.google.com/accounts/o8/id?id=AItOawkG9vRyqMfWuEXELX-YodLcRJfUGRwFOjM",  
                 DisplayName =  "a" 
             });
