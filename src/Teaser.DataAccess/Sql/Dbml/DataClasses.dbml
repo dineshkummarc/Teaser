@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Teaser" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Teaser;Integrated Security=True" SettingsObjectName="Teaser.DataAccess.Properties.Settings" SettingsPropertyName="TeaserConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Game" Member="Games">
+    <Type Name="Game">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HomeTeamId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AwayTeamId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Line" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HomeScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AwayScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WeekId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Game_Pick" Member="Picks" ThisKey="Id" OtherKey="GameId" Type="Pick" />
+      <Association Name="Week_Game" Member="Week" ThisKey="WeekId" OtherKey="Id" Type="Week" IsForeignKey="true" />
+      <Association Name="ProTeam_Game" Member="ProTeam" ThisKey="AwayTeamId" OtherKey="Id" Type="ProTeam" IsForeignKey="true" />
+      <Association Name="ProTeam_Game1" Member="ProTeam1" ThisKey="HomeTeamId" OtherKey="Id" Type="ProTeam" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Week" Member="Weeks">
+    <Type Name="Week">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Week_Game" Member="Games" ThisKey="Id" OtherKey="WeekId" Type="Game" />
+    </Type>
+  </Table>
+  <Table Name="dbo.League" Member="Leagues">
+    <Type Name="League">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="League_TeaserTeam" Member="TeaserTeams" ThisKey="Id" OtherKey="LeagueId" Type="TeaserTeam" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pick" Member="Picks">
+    <Type Name="Pick">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GameId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeaserTeamId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProTeamId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Game_Pick" Member="Game" ThisKey="GameId" OtherKey="Id" Type="Game" IsForeignKey="true" />
+      <Association Name="ProTeam_Pick" Member="ProTeam" ThisKey="ProTeamId" OtherKey="Id" Type="ProTeam" IsForeignKey="true" />
+      <Association Name="TeaserTeam_Pick" Member="TeaserTeam" ThisKey="TeaserTeamId" OtherKey="Id" Type="TeaserTeam" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProTeam" Member="ProTeams">
+    <Type Name="ProTeam">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ProTeam_Game" Member="Games" ThisKey="Id" OtherKey="AwayTeamId" Type="Game" />
+      <Association Name="ProTeam_Game1" Member="Games1" ThisKey="Id" OtherKey="HomeTeamId" Type="Game" />
+      <Association Name="ProTeam_Pick" Member="Picks" ThisKey="Id" OtherKey="ProTeamId" Type="Pick" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Role_SiteUser_Role" Member="SiteUser_Roles" ThisKey="Id" OtherKey="RoleId" Type="SiteUser_Role" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RpxUser" Member="RpxUsers">
+    <Type Name="RpxUser">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Identifier" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="JsonData" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SiteUser_RpxUser" Member="SiteUser" ThisKey="SiteUserId" OtherKey="Id" Type="SiteUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiteUser" Member="SiteUsers">
+    <Type Name="SiteUser">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="SiteUser_RpxUser" Member="RpxUsers" ThisKey="Id" OtherKey="SiteUserId" Type="RpxUser" />
+      <Association Name="SiteUser_SiteUser_Role" Member="SiteUser_Roles" ThisKey="Id" OtherKey="SiteUserId" Type="SiteUser_Role" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiteUser_Role" Member="SiteUser_Roles">
+    <Type Name="SiteUser_Role">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Role_SiteUser_Role" Member="Role" ThisKey="RoleId" OtherKey="Id" Type="Role" IsForeignKey="true" />
+      <Association Name="SiteUser_SiteUser_Role" Member="SiteUser" ThisKey="SiteUserId" OtherKey="Id" Type="SiteUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TeaserTeam" Member="TeaserTeams">
+    <Type Name="TeaserTeam">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LeagueId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TeaserTeam_Pick" Member="Picks" ThisKey="Id" OtherKey="TeaserTeamId" Type="Pick" />
+      <Association Name="League_TeaserTeam" Member="League" ThisKey="LeagueId" OtherKey="Id" Type="League" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

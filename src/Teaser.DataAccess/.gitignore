@@ -5,3 +5,4 @@ obj/**
 AppSettings.config
 T4MVC.cs
 *.Publish.xml
+/Properties/Settings.settings
