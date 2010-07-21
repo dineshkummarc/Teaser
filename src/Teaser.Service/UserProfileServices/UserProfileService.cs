@@ -7,7 +7,7 @@ using Teaser.DataAccess.Interfaces;
 
 namespace Teaser.Service.UserProfileServices
 {
-    public class UserProfileService
+    public class UserProfileService : IUserProfileService
     { 
         private readonly IUserProfileRepository _UserProfileRepository;
         public UserProfileService(IUserProfileRepository UserProfileRepository)

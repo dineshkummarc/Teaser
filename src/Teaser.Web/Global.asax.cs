@@ -14,6 +14,7 @@ using StructureMap.Attributes;
 using Teaser.Service.SiteUserServices;
 using System.Web.Security;
 using System.Security.Principal;
+using Teaser.Service.UserProfileServices;
 
 
 namespace Teaser.Web
@@ -77,12 +78,19 @@ namespace Teaser.Web
                 });
                 x.ForRequestedType(typeof(IRpxUserService)).CacheBy(InstanceScope.Singleton).Use(typeof(RpxUserService));
                 x.ForRequestedType(typeof(ISiteUserService)).CacheBy(InstanceScope.Singleton).Use(typeof(SiteUserService));
+                x.ForRequestedType(typeof(IUserProfileService)).CacheBy(InstanceScope.Singleton).Use(typeof(UserProfileService));
 
 
                 x.ForRequestedType(typeof(IProductRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeProductRepository));
                 x.ForRequestedType(typeof(IRpxUserRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeRpxUserRepository));
+                x.ForRequestedType(typeof(ILeagueRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeLeagueRepository));
                 x.ForRequestedType(typeof(ISiteUserRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeSiteUserRepository));
                 x.ForRequestedType(typeof(IUserTeaserTeamRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeUserTeaserTeamRepository));
+                x.ForRequestedType(typeof(ISiteUserRoleRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeSiteUserRoleRepository));
+                x.ForRequestedType(typeof(ITeaserTeamRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeTeaserTeamRepository));
+                x.ForRequestedType(typeof(IUserProfileRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeUserProfileRepository));
+                x.ForRequestedType(typeof(ISiteUserRoleRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeSiteUserRoleRepository));
+                x.ForRequestedType(typeof(IRoleRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(FakeRoleRepository)); 
                 
 
                 //x.ForRequestedType(typeof(IProductRepository)).CacheBy(InstanceScope.Singleton).Use(typeof(SqlProductRepository));
